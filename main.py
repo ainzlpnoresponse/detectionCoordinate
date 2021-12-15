@@ -1,3 +1,5 @@
+import json
+
 import cv2
 import mediapipe as mp
 
@@ -75,12 +77,15 @@ with mp_pose.Pose(
 
         # 座標
         # in the cycle of capture
+
+
         if results.pose_landmarks:
             f = open("test.txt", mode='w')
             for i in range(32):
                 coord = results.pose_landmarks.landmark[i]
                 f.write(' '.join(['(', str(coord.x), ',', str(coord.y), ',', str(coord.z), ')\n']))
                 print(' '.join(['( ', str(coord.x), ' , ', str(coord.y), ' , ', str(coord.z), ' )']))
+
 
         # Flip the image horizontally for a selfie-view display.
         cv2.imshow('MediaPipe Pose', cv2.flip(image, 1))
