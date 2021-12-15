@@ -80,7 +80,7 @@ with mp_pose.Pose(
 
         if results.pose_landmarks:
             f = open("test.txt", mode='w')
-            for i in range(32):
+            for i in range(31):
                 coord = results.pose_landmarks.landmark[i]
                 f.write(' '.join(['(', str(coord.x), ',', str(coord.y), ',', str(coord.z), ')\n']))
                 print(' '.join(['( ', str(coord.x), ' , ', str(coord.y), ' , ', str(coord.z), ' )']))
