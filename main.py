@@ -1,6 +1,5 @@
-import json
-
 import cv2
+import numpy as np
 import mediapipe as mp
 
 mp_drawing = mp.solutions.drawing_utils
@@ -92,4 +91,4 @@ with mp_pose.Pose(
         if cv2.waitKey(5) & 0xFF == 27:
             break
 
-cap.release(
+cap.release()
